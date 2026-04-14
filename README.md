@@ -63,3 +63,85 @@ Future versions may expand into a dual-agent model:
 ## Safety Boundary
 
 This lab is for simulation and controlled testing only. It does not manage real identities, real credentials, or unrestricted administrative actions.
+
+## Architecture (v1)
+
+The system is designed as a controlled workflow with clear boundaries.
+
+### Components
+
+- Inbox (Test Email)
+  - Receives simulated security alerts
+  - Acts as the trigger source
+
+- Workflow Engine (n8n)
+  - Monitors inbox
+  - Parses incoming messages
+  - Routes logic based on classification
+
+- LLM Classification Layer
+  - Determines type of request (login alert, reset, unknown)
+  - Assigns severity (low, medium, high)
+
+- Policy Layer
+  - Applies rules:
+    - allow
+    - flag
+    - require approval
+    - deny
+
+- Output Actions
+  - Draft response
+  - Log event
+  - Escalate for human approval
+
+- Audit Log (future)
+  - Stores all actions and decisions
+
+### Control Principles
+
+- No autonomous sensitive actions
+- Human approval required for high-risk events
+- All actions logged
+- Test environment only
+## Architecture (v1)
+
+The system is designed as a controlled workflow with clear boundaries.
+
+### Components
+
+- Inbox (Test Email)
+  - Receives simulated security alerts
+  - Acts as the trigger source
+
+- Workflow Engine (n8n)
+  - Monitors inbox
+  - Parses incoming messages
+  - Routes logic based on classification
+
+- LLM Classification Layer
+  - Determines type of request (login alert, reset, unknown)
+  - Assigns severity (low, medium, high)
+
+- Policy Layer
+  - Applies rules:
+    - allow
+    - flag
+    - require approval
+    - deny
+
+- Output Actions
+  - Draft response
+  - Log event
+  - Escalate for human approval
+
+- Audit Log (future)
+  - Stores all actions and decisions
+
+### Control Principles
+
+- No autonomous sensitive actions
+- Human approval required for high-risk events
+- All actions logged
+- Test environment only
+
