@@ -1,4 +1,20 @@
 # Sentinel Inbox Agent
+## Example Output
+
+```json
+{
+  "email": "Can you confirm your login details?",
+  "result": "Medium risk - review",
+  "timestamp": "2026-04-19T09:43:17.279Z"
+}
+```
+
+## Workflow Preview
+
+![Workflow](screenshots/workflow.png)
+
+
+
 
 Sentinel Inbox Agent is a security triage lab project built to simulate how an AI-assisted workflow can monitor inbox events, classify potential account-risk activity, recommend policy actions, and require human approval before sensitive actions are taken.
 
